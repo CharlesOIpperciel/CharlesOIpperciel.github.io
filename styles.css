@@ -4,8 +4,6 @@ body, h1, h2, nav, ul, li, a {
     padding: 0;
 }
 
-/* styles.css */
-
 body {
     margin: 0; /* Reset the default margin */
     /* Reset the default padding */
@@ -66,6 +64,7 @@ nav a {
     display: flex;
     align-items: center;
     transition: transform 0.2s;
+    font-family: 'Copperplate', sans-serif;
 }
 
 nav a:hover {
@@ -82,7 +81,7 @@ nav img {
 
 .main-image-container {
     position: relative;
-    height: 500px; /* Set the height of the main image container as needed */
+    height: 400px; /* Set the height of the main image container as needed */
     overflow: hidden; /* Hide overflowing content */
     border-radius: 20px ;
 }

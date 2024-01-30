@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Simulated typing effect for your name
 const nameElement = document.getElementById('typed-name');
-const nameText = 'My Portfolio'; // Your name
+const nameText = 'Charles-Olivier Ipperciel'; // Your name
 
 let charIndex = 0;
 
