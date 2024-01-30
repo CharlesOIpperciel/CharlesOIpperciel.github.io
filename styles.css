@@ -79,19 +79,10 @@ nav img {
     margin-right: 5px;
 }
 
-.main-image-container {
-    position: relative;
-    height: 400px; /* Set the height of the main image container as needed */
-    overflow: hidden; /* Hide overflowing content */
-    border-radius: 20px ;
-}
-
 .main-image {
     width: 100%;
     height: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     border: 2px solid #ccc;
     border-radius: 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
