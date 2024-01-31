@@ -1,13 +1,9 @@
 /* styles.css */
 body, h1, h2, nav, ul, li, a {
     margin: 0;
-    padding: 0;
 }
 
 body {
-    margin: 0; /* Reset the default margin */
-    /* Reset the default padding */
-
     padding: 0 200px 20px;
 }
 
@@ -17,7 +13,14 @@ body {
     padding: 0; /* Remove padding for the container */
 }
 
+.separator {
+    border: none;
+    height: 1.5px; /* Adjust the height of the line */
+    background-color: #000; /* Set the line color to black */
+    margin: 20px 0; /* Add margin to control the spacing around the line */
+}
 
+/* Header */
 header {
     text-align: center;
 }
@@ -28,13 +31,6 @@ h1 {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
-.separator {
-    border: none;
-    height: 1px; /* Adjust the height of the line */
-    background-color: #000; /* Set the line color to black */
-    margin: 20px 0; /* Add margin to control the spacing around the line */
-}
-
 
 h2 {
     font-size: 2.5em;
@@ -44,6 +40,7 @@ h2 {
     text-align: center;
 }
 
+/* Navigation bar */
 nav ul {
     display: flex;
     justify-content: center;
@@ -79,6 +76,12 @@ nav img {
     margin-right: 5px;
 }
 
+
+/* Main content */
+.image-container {
+    position: relative;
+}
+
 .main-image {
     width: 100%;
     height: auto;
@@ -86,11 +89,22 @@ nav img {
     border: 2px solid #ccc;
     border-radius: 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    z-index: -1; /* Place the image behind the content */
-    transition: transform 0.3s ease; /* Add a transition for smooth scrolling */
 }
 
+.image-text {
+    position: absolute;
+    top: 50%; /* Adjust as needed to vertically center the text */
+    left: 50%; /* Adjust as needed to horizontally center the text */
+    transform: translate(-50%, -50%);
+    color: white; /* Text color */
+    padding: 10px 30px; /* Adjust padding as needed */
+    font-size: 2.0em; /* Adjust font size as needed */
+    border-radius: 5px; /* Rounded corners for the text box */
+    font-family: 'Copperplate', sans-serif;
+    white-space: nowrap;
+}
 
+/* Projects */
 .projects-grid {
     display: grid;
     grid-template-columns: 200px 200px;
@@ -109,24 +123,29 @@ nav img {
     font-size: 1.0em;
 }
 
-
-.project-thumbnail {
-    position: relative;
-    cursor: pointer;
+.project-status {
+    font-family: 'Copperplate', sans-serif;
+    font-size: 1.0em;
 }
 
-.project-thumbnail {
-    position: relative;
-    cursor: pointer;
-    overflow: hidden; /* Hide the pseudo-element initially */
+.project-thumbnail .project-status {
+    display: none; /* Initially hide the project status */
+    position: absolute; /* Position it absolutely within the thumbnail */
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Background color for the status */
+    color: yellow; /* Text color for the status */
+    padding: 5px; /* Add some padding to make it readable */
+    font-size: 0.8em; /* Adjust font size as needed */
+    opacity: 0; /* Initially set opacity to 0 */
+    transition: opacity 0.3s ease; /* Add a smooth transition for opacity */
 }
 
-.project-thumbnail img {
-    display: block;
-    transition: transform 0.5s ease;
-    max-width: 100%;
-    height: auto;
+.project-thumbnail:hover .project-status {
+    display: block; /* Show the project status on hover */
+    opacity: 1; /* Change opacity to 1 on hover to make it visible */
 }
+
 
 .project-thumbnail {
     position: relative;
@@ -175,6 +194,85 @@ nav img {
 .project-thumbnail:hover .project-name {
     opacity: 1; /* Change opacity to 1 on hover to make the project name visible */
 }
+
+/* About Me */
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+}
+
+.about-text {
+    margin-top: 1.0em;
+    margin-bottom: 0.5em;
+    padding: 20px; /* Add padding to create a rectangle around the text */
+    border: 2px solid #ccc; /* Add a border around the text */
+    border-radius: 10px; /* Add rounded corners to the border */
+    font-family: 'Copperplate', sans-serif;
+    font-size: 1.5em;
+    background-color: #F0F0F0;
+}
+
+.image-text-2 {
+    position: absolute;
+    top: 39%; /* Adjust as needed to vertically center the text */
+    left: 50%; /* Adjust as needed to horizontally center the text */
+    transform: translate(-50%, -50%);
+    color: white; /* Text color */
+    padding: 10px 30px; /* Adjust padding as needed */
+    font-size: 2.0em; /* Adjust font size as needed */
+    border-radius: 5px; /* Rounded corners for the text box */
+    font-family: 'Copperplate', sans-serif;
+    white-space: nowrap;
+}
+
+
+.about-image img{
+    width: 100%;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Page */
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Adjust the gap between icons as needed */
+    margin-top: 20px; /* Add some top margin for spacing */
+}
+
+/* Reduce the size of the contact icons */
+.contact-icons a img {
+    width: 50px; /* Adjust the width to make the icons smaller */
+    height: auto; /* Maintain aspect ratio */
+    filter: grayscale(100%);
+    transition:  transform 0.2s ease;
+}
+
+.typed-text-3 {
+    font-family: 'Copperplate', sans-serif;
+    font-size: 2.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+.contact-icons a:hover img {
+    transform: scale(1.2);
+}
+
+
+
+
+
+
+
 
 
 

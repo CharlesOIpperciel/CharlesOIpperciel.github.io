@@ -9,32 +9,35 @@
 <body>
 <div class="container"></div>
 <header>
-    <h1>
-        <span id="typed-name"></span>
-    </h1>
-    <hr class="separator">
+    <h1>Charles-Olivier Ipperciel</h1>
     <nav>
         <ul>
-            <li><a href="#portfolio"><img src="./Images/open-folder-outline-icon.png" alt="Portfolio"> Portfolio</a></li>
-            <li><a href="#resume"><img src="./Images/text-document-check-icon.png" alt="Resume"> Resume</a></li>
-            <li><a href="#about"><img src="./Images/speech-bubble-line-icon.png" alt="About"> About</a></li>
-            <li><a href="#contact"><img src="./Images/envelope-line-icon.png" alt="Contact"> Contact</a></li>
+            <li><a href="index.html"><img src="./Images/open-folder-outline-icon.png" alt="Portfolio"> Portfolio</a></li>
+            <li><a href="./Resume/English_Resume_COI.pdf" target="_blank"><img src="./Images/text-document-check-icon.png" alt="Resume"> Resume</a></li>
+            <li><a href="about.html"><img src="./Images/speech-bubble-line-icon.png" alt="About"> About</a></li>
+            <li><a href="contact.html"><img src="./Images/envelope-line-icon.png" alt="Contact"> Contact</a></li>
         </ul>
     </nav>
-
+    <hr class="separator">
 </header>
 <section id="portfolio">
-    <img src="./Images/c8673ad4c46ade00cf3bd0049db62b16.jpg" alt="Main Portfolio Image" class="main-image">
+        <div class="image-container">
+            <img src="./Images/c8673ad4c46ade00cf3bd0049db62b16.jpg" alt="Main Portfolio Image" class="main-image">
+            <div id="text-image-portfolio" class="image-text"></div>
+        </div>
+</section>
     <h2>Projects</h2>
     <hr class="separator">
     <div class="projects-grid">
         <div class="project-thumbnail" data-url="project1-details.html">
             <img src="./Images/justin-attas-puzzle-piece-plotting-method.jpg" alt="Sudoku Solver">
             <div class="project-name">Sudoku Solver</div>
+            <div class="project-status">In-Progress</div>
         </div>
         <div class="project-thumbnail" data-url="project2-details.html">
             <img src="./Images/1*jCn7s1U8Kui514py5E4ydw.jpg" alt="Amazon Web Scraper">
             <div class="project-name">Amazon Web Scraper</div>
+            <div class="project-status">In-Progress</div>
         </div>
     </div>
 </section>

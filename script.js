@@ -9,24 +9,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
-// Simulated typing effect for your name
-const nameElement = document.getElementById('typed-name');
-const nameText = 'Charles-Olivier Ipperciel'; // Your name
-
-let charIndex = 0;
-
-function typeCharacter() {
-    if (charIndex < nameText.length) {
-        nameElement.textContent += nameText.charAt(charIndex);
-        charIndex++;
-        setTimeout(typeCharacter, 50); // Adjust typing speed (milliseconds)
+// Define an array of objects with text and element selectors
+const typingElements = [
+    {
+        text: "Venture into the realm of my projects, where code meets creativity.",
+        selector: '#text-image-portfolio' // ID of the element in index.html
+    },
+    {
+        text: "Hi, nice to meet you.",
+        selector: '#text-image-about' // ID of the element in about.html
+    },
+    {
+        text: "Contact me.",
+        selector: '#text-contact' // ID of the element in about.html
     }
-}
-// Start typing animation when the page loads
-document.addEventListener('DOMContentLoaded', () => {
+];
+
+function typeText(element, text) {
+    let charIndex = 0;
+    const targetElement = document.querySelector(element);
+
+    function typeCharacter() {
+        if (charIndex < text.length) {
+            targetElement.textContent += text.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeCharacter, 40); // Adjust typing speed (milliseconds)
+        }
+    }
+
     typeCharacter();
+}
+
+// Start typing animations when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    typingElements.forEach((item) => {
+        if (document.querySelector(item.selector)) {
+            typeText(item.selector, item.text);
+        }
+    });
 });
+
+
+
 
 
 
