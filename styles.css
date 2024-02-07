@@ -238,6 +238,19 @@ nav img {
     font-family: 'Copperplate', sans-serif;
     font-size: 1.5em;
     background-color: #F0F0F0;
+    text-align: justify;
+}
+
+.about-text-project {
+    margin-top: 1.0em;
+    margin-bottom: 0.5em;
+    padding: 20px; /* Add padding to create a rectangle around the text */
+    border: 2px solid #ccc; /* Add a border around the text */
+    border-radius: 10px; /* Add rounded corners to the border */
+    font-family: 'Copperplate', sans-serif;
+    font-size: 1.0em;
+    background-color: #F0F0F0;
+    text-align: justify;
 }
 
 .image-text-2 {
@@ -271,9 +284,10 @@ nav img {
     margin-top: 20px; /* Add some top margin for spacing */
 }
 
+
 /* Reduce the size of the contact icons */
 .contact-icons a img {
-    width: 50px; /* Adjust the width to make the icons smaller */
+    width: 40px; /* Adjust the width to make the icons smaller */
     height: auto; /* Maintain aspect ratio */
     filter: grayscale(100%);
     transition:  transform 0.2s ease;
@@ -289,6 +303,14 @@ nav img {
 
 .contact-icons a:hover img {
     transform: scale(1.2);
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Copperplate', sans-serif;
 }
 
 
