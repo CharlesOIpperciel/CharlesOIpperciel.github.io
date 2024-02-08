@@ -335,6 +335,45 @@ footer {
     font-family: 'Copperplate', sans-serif;
 }
 
+/* Project - Sudoku Solver Grid */
+
+#grid {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(9, 40px);
+    grid-template-rows: repeat(9, 40px);
+    gap: 1px;
+}
+
+input[type="text"] {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.cell {
+    border: 1px solid black; /* Add black border around each cell */
+}
+
+#solveBtn, #clearBtn {
+    padding: 10px 10px;
+    font-size: 1.0em;
+    font-family: 'Copperplate', sans-serif;
+    border-radius: 5px;
+    background-color: #F0F0F0;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#CenterSudokuButtons {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+}
+
 
 
 
