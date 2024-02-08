@@ -132,41 +132,63 @@ nav img {
 /* Projects */
 .projects-grid {
     display: grid;
-    grid-template-columns: 200px 200px;
+    grid-template-columns: 170px 170px 170px;
     grid-template-rows: auto;
     gap: 70px;
     padding: 20px;
     justify-content: center; /* Center horizontally */
     align-content: center; /* Center vertically */
     align-items: center;
-    background-color: #F0F0F0;
     border-radius: 20px;
 }
 
 .project-name {
     font-family: 'Copperplate', sans-serif;
-    font-size: 1.0em;
+    font-size: 0.8em;
 }
 
-.project-status {
+.project-status-progress {
     font-family: 'Copperplate', sans-serif;
     font-size: 1.0em;
+    color: yellow;
 }
 
-.project-thumbnail .project-status {
+.project-status-done {
+    font-family: 'Copperplate', sans-serif;
+    font-size: 1.0em;
+    color: lightgreen;
+}
+
+.project-thumbnail .project-status-progress {
     display: none; /* Initially hide the project status */
     position: absolute; /* Position it absolutely within the thumbnail */
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.7); /* Background color for the status */
-    color: yellow; /* Text color for the status */
     padding: 5px; /* Add some padding to make it readable */
     font-size: 0.8em; /* Adjust font size as needed */
     opacity: 0; /* Initially set opacity to 0 */
     transition: opacity 0.3s ease; /* Add a smooth transition for opacity */
 }
 
-.project-thumbnail:hover .project-status {
+.project-thumbnail:hover .project-status-progress {
+    display: block; /* Show the project status on hover */
+    opacity: 1; /* Change opacity to 1 on hover to make it visible */
+}
+
+.project-thumbnail .project-status-done {
+    display: none; /* Initially hide the project status */
+    position: absolute; /* Position it absolutely within the thumbnail */
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Background color for the status */
+    padding: 5px; /* Add some padding to make it readable */
+    font-size: 0.8em; /* Adjust font size as needed */
+    opacity: 0; /* Initially set opacity to 0 */
+    transition: opacity 0.3s ease; /* Add a smooth transition for opacity */
+}
+
+.project-thumbnail:hover .project-status-done {
     display: block; /* Show the project status on hover */
     opacity: 1; /* Change opacity to 1 on hover to make it visible */
 }
