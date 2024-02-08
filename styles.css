@@ -1,4 +1,5 @@
-/* styles.css */
+/********************************/
+/********************************/
 body, h1, h2, nav, ul, li, a {
     margin: 0;
 }
@@ -9,17 +10,19 @@ body {
 
 .container {
     max-width: 1200px;
-    margin: 0 auto; /* Center the container horizontally */
-    padding: 0; /* Remove padding for the container */
+    margin: 0 auto;
+    padding: 0;
 }
 
 .separator {
     border: none;
-    height: 1.5px; /* Adjust the height of the line */
-    background-color: #000; /* Set the line color to black */
-    margin: 20px 0; /* Add margin to control the spacing around the line */
+    height: 1.5px;
+    background-color: #000;
+    margin: 20px 0;
 }
 
+/********************************/
+/********************************/
 /* Header */
 header {
     text-align: center;
@@ -40,6 +43,8 @@ h2 {
     text-align: center;
 }
 
+/********************************/
+/********************************/
 /* Navigation bar */
 nav ul {
     display: flex;
@@ -84,25 +89,28 @@ nav a {
     border-radius: 5px;
 }
 
-.dropdown-content a:hover {background-color: #F0F0F0;}
+.dropdown-content a:hover {
+    background-color: #F0F0F0;
+}
 
-.dropdown:hover .dropdown-content {display: block;}
-
-
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
 nav a:hover {
-    transform: scale(1.3); /* Increase the size on hover */
+    transform: scale(1.3);
     background-color: #EEEEEE;
     border-radius: 5px;
 }
 
 nav img {
-    width: 20px; /* Adjust the width of the images as needed */
-    height: auto; /* Maintain aspect ratio */
+    width: 20px;
+    height: auto;
     margin-right: 5px;
 }
 
-
+/********************************/
+/********************************/
 /* Main content */
 .image-container {
     position: relative;
@@ -120,15 +128,17 @@ nav img {
 .image-text {
     margin-top: 1.0em;
     margin-bottom: 0.5em;
-    padding: 20px; /* Add padding to create a rectangle around the text */
-    border: 2px solid #ccc; /* Add a border around the text */
-    border-radius: 10px; /* Add rounded corners to the border */
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
     font-family: 'Copperplate', sans-serif;
     font-size: 1.5em;
     background-color: #F0F0F0;
     text-align: center;
 }
 
+/********************************/
+/********************************/
 /* Projects */
 .projects-grid {
     display: grid;
@@ -136,8 +146,8 @@ nav img {
     grid-template-rows: auto;
     gap: 70px;
     padding: 20px;
-    justify-content: center; /* Center horizontally */
-    align-content: center; /* Center vertically */
+    justify-content: center;
+    align-content: center;
     align-items: center;
     border-radius: 20px;
 }
@@ -160,44 +170,44 @@ nav img {
 }
 
 .project-thumbnail .project-status-progress {
-    display: none; /* Initially hide the project status */
-    position: absolute; /* Position it absolutely within the thumbnail */
+    display: none;
+    position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Background color for the status */
-    padding: 5px; /* Add some padding to make it readable */
-    font-size: 0.8em; /* Adjust font size as needed */
-    opacity: 0; /* Initially set opacity to 0 */
-    transition: opacity 0.3s ease; /* Add a smooth transition for opacity */
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    font-size: 0.8em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .project-thumbnail:hover .project-status-progress {
-    display: block; /* Show the project status on hover */
-    opacity: 1; /* Change opacity to 1 on hover to make it visible */
+    display: block;
+    opacity: 1;
 }
 
 .project-thumbnail .project-status-done {
-    display: none; /* Initially hide the project status */
-    position: absolute; /* Position it absolutely within the thumbnail */
+    display: none;
+    position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Background color for the status */
-    padding: 5px; /* Add some padding to make it readable */
-    font-size: 0.8em; /* Adjust font size as needed */
-    opacity: 0; /* Initially set opacity to 0 */
-    transition: opacity 0.3s ease; /* Add a smooth transition for opacity */
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    font-size: 0.8em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .project-thumbnail:hover .project-status-done {
-    display: block; /* Show the project status on hover */
-    opacity: 1; /* Change opacity to 1 on hover to make it visible */
+    display: block;
+    opacity: 1;
 }
 
 
 .project-thumbnail {
     position: relative;
     cursor: pointer;
-    overflow: hidden; /* Hide the pseudo-element initially */
+    overflow: hidden;
 }
 
 .project-thumbnail img {
@@ -212,38 +222,39 @@ nav img {
     content: "";
     position: absolute;
     width: 100%;
-    height: 50%; /* Set the height to 50% to cover half of the image */
+    height: 50%;
     bottom: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.7);
-    transform: translateY(100%); /* Move it below the image initially */
-    transition: transform 0.5s ease; /* Add a smooth transition for transform */
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
 }
 
 .project-thumbnail .project-name {
     position: absolute;
     width: 100%;
-    height: 50%; /* Set the height to 50% to match the black square's height */
+    height: 50%;
     top: 50%;
     left: 0;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0; /* Initially, set the opacity of the project name to 0 to hide it */
-    transition: opacity 0.5s ease; /* Add a smooth transition for opacity */
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .project-thumbnail:hover::before {
-    transform: translateY(0); /* Move the black square up to reveal it on hover */
+    transform: translateY(0);
 }
 
 .project-thumbnail:hover .project-name {
-    opacity: 1; /* Change opacity to 1 on hover to make the project name visible */
+    opacity: 1;
 }
 
+/********************************/
+/********************************/
 /* About Me */
-
 .about-content {
     display: flex;
     flex-direction: column;
@@ -254,9 +265,9 @@ nav img {
 .about-text {
     margin-top: 1.0em;
     margin-bottom: 0.5em;
-    padding: 20px; /* Add padding to create a rectangle around the text */
-    border: 2px solid #ccc; /* Add a border around the text */
-    border-radius: 10px; /* Add rounded corners to the border */
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
     font-family: 'Copperplate', sans-serif;
     font-size: 1.5em;
     background-color: #F0F0F0;
@@ -266,9 +277,9 @@ nav img {
 .about-text-project {
     margin-top: 1.0em;
     margin-bottom: 0.5em;
-    padding: 20px; /* Add padding to create a rectangle around the text */
-    border: 2px solid #ccc; /* Add a border around the text */
-    border-radius: 10px; /* Add rounded corners to the border */
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
     font-family: 'Copperplate', sans-serif;
     font-size: 1.0em;
     background-color: #F0F0F0;
@@ -278,9 +289,9 @@ nav img {
 .image-text-2 {
     margin-top: 1.0em;
     margin-bottom: 0.5em;
-    padding: 20px; /* Add padding to create a rectangle around the text */
-    border: 2px solid #ccc; /* Add a border around the text */
-    border-radius: 10px; /* Add rounded corners to the border */
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
     font-family: 'Copperplate', sans-serif;
     font-size: 1.5em;
     background-color: #F0F0F0;
@@ -296,21 +307,20 @@ nav img {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
+/********************************/
+/********************************/
 /* Contact Page */
-
 .contact-icons {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px; /* Adjust the gap between icons as needed */
-    margin-top: 20px; /* Add some top margin for spacing */
+    gap: 40px;
+    margin-top: 20px;
 }
 
-
-/* Reduce the size of the contact icons */
 .contact-icons a img {
-    width: 40px; /* Adjust the width to make the icons smaller */
-    height: auto; /* Maintain aspect ratio */
+    width: 40px;
+    height: auto;
     filter: grayscale(100%);
     transition:  transform 0.2s ease;
 }
@@ -326,15 +336,17 @@ nav img {
 .contact-icons a:hover img {
     transform: scale(1.2);
 }
-
+/********************************/
+/********************************/
 /* Footer */
-
 footer {
     text-align: center;
     margin-top: 20px;
     font-family: 'Copperplate', sans-serif;
 }
 
+/********************************/
+/********************************/
 /* Project - Sudoku Solver Grid */
 
 #grid {

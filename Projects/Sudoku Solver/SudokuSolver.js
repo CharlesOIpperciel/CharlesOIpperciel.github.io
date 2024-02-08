@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const grid = [];
         let index = 0;
 
+        // Populate the grid array with values from input fields
         for (let i = 0; i < 9; i++) {
             const row = [];
             for (let j = 0; j < 9; j++) {
@@ -32,6 +33,13 @@ document.addEventListener("DOMContentLoaded", function() {
             grid.push(row);
         }
 
+        // Check if the initial Sudoku configuration is valid
+        if (!isValidSudoku(grid)) {
+            alert("Invalid Sudoku");
+            return;
+        }
+
+        // Attempt to solve the Sudoku puzzle
         if (solveSudokuRecursive(grid)) {
             // Update UI with solved puzzle
             for (let i = 0; i < 9; i++) {
@@ -43,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
             alert("No solution exists");
         }
     }
+
 
     function solveSudokuRecursive(grid) {
         let emptyCell = findEmptyCell(grid);
