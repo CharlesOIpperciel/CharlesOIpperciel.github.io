@@ -1,71 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Charles-Olivier</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<div class="container"></div>
-<header>
-    <h1>Charles-Olivier Ipperciel</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html"><img src="./Images/open-folder-outline-icon.png" alt="Portfolio">Portfolio</a></li>
-            <div class="dropdown">
-                <li><a href="#"><img src="./Images/text-document-check-icon.png" alt="Resume">Resume</a>
-                    <div class="dropdown-content">
-                        <a href="Resume%20PDFs/French_Resume_COI.pdf" target="_blank">Français</a>
-                        <a href="Resume%20PDFs/English_Resume_COI.pdf" target="_blank">English</a>
-                    </div>
-                </li>
-            </div>
-            <li><a href="about.html"><img src="./Images/speech-bubble-line-icon.png" alt="About">About</a></li>
-            <li><a href="contact.html"><img src="./Images/envelope-line-icon.png" alt="Contact">Contact</a></li>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Charles-Olivier Ipperciel</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
+      </div>
     </nav>
-    <hr class="separator">
-</header>
-<section id="portfolio">
-        <div class="image-container">
-            <img src="./Images/c8673ad4c46ade00cf3bd0049db62b16.jpg" alt="Main Portfolio Image" class="main-image">
+    <nav id="hamburger-nav">
+      <div class="logo">My Portfolio</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-</section>
-    <h2>Projects</h2>
-    <hr class="separator">
-    <div class="projects-grid">
-        <a href="Projects/Sudoku%20Solver/Project-SudokuSolver.html"><div class="project-thumbnail" data-url="#">
-            <img src="./Images/justin-attas-puzzle-piece-plotting-method.jpg" alt="Sudoku Solver">
-            <div class="project-name">Sudoku Solver</div>
-            <div class="project-status-done">Live</div>
-        </div></a>
-        <a href="#"><div class="project-thumbnail" data-url="#">
-            <img src="./Images/1*jCn7s1U8Kui514py5E4ydw.jpg" alt="Amazon Web Scraper">
-            <div class="project-name">Amazon Web Scraper</div>
-            <div class="project-status-progress">In-Progress</div>
-        </div></a>
-        <a href="#"><div class="project-thumbnail" data-url="#">
-            <img src="./Images/Negative-Emotions.png" alt="Mood Meter">
-            <div class="project-name">Mood Meter</div>
-            <div class="project-status-progress">In-Progress</div>
-        </div></a>
-    </div>
-<script src="script.js"></script>
-</body>
-<section id="contact">
-    <div class="contact-form">
-        <div id="text-contact" class="typed-text-3"></div>
-        <div class="contact-icons">
-            <a href="https://github.com/CharlesOIpperciel?tab=repositories" target="_blank"><img src="./Images/github-mark/github-mark.png" alt="GitHub"></a>
-            <a href="https://www.linkedin.com/in/coipp/" target="_blank"><img src="./Images/LinkedIn-Logos/LI-In-Bug.png" alt="LinkedIn"></a>
-            <a href="mailto:ippc2001@usherbrooke.ca"><img src="./Images/envelope-line-icon.png" alt="Email"></a>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </div>
-    </div>
-</section>
-<footer>
-    <div class="footer">
-        <p>© Charles-Olivier Ipperciel</p>
-    </div>
-</footer>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="./Images/LinkedInPhoto.jpg" alt="John Doe profile picture" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Charles-Olivier Ipperciel</h1>
+        <p class="section__text__p2">CS Student</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('./Resumes/Resumes.pdf')"
+          >
+            Download Resume
+          </button>
+        </div>
+        <div id="socials-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="My LinkedIn profile"
+            class="icon"
+            onclick="window.open('https://www.linkedin.com/in/coipp/')"
+            target="_blank"
+          />
+          <img
+            src="./assets/github.png"
+            alt="My Github profile"
+            class="icon"
+            onclick="window.open('https://github.com/CharlesOIpperciel?tab=repositories')"
+            targer="_blank"
+          />
+        </div>
+      </div>
+      <img
+              src="./assets/arrow.png"
+              alt="Arrow icon"
+              class="icon arrow"
+              onclick="location.href='./#projects'"
+      />
+    </section>
+    <section id="about">
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img
+            src="./Images/AboutMe.jpg"
+            alt="Profile picture"
+            class="about-pic"
+          />
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img
+                src="./assets/experience.png"
+                alt="Experience icon"
+                class="icon"
+              />
+              <h3>Experience</h3>
+              <p>2 Internships<br />Software Development</p>
+            </div>
+            <div class="details-container">
+              <img
+                src="./assets/education.png"
+                alt="Education icon"
+                class="icon"
+              />
+              <h3>Education</h3>
+              <p>On-going: B.Sc. Computer Science<br />Future: M.Sc. AI and Data Science</p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              My name is Charles-Olivier Ipperciel, I'm a devoted CS student heading towards a Master’s Degree in
+              AI/Data science. Although I have profound curiosity about my classes, my journey in Computer Science
+              isn't limited to textbooks and classrooms. I thrive on hands-on experience, and that's why I constantly
+              engage in side projects. I enjoy the challenges of turning data and knowledge into actionable insights.
+            </p>
+            <br>
+            <p>
+              I'm a sports enthusiast, with a particular love for hockey and running. When I'm not deep in the world of
+              code, you'll often find me on the ice, lacing up my skates, or hitting the pavement for a refreshing run.
+              This website is my platform to share my experiences, insights, and projects with you!
+            </p>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#projects'"
+      />
+    </section>
+    <section id="projects">
+      <p class="section__text__p1">My Recent</p>
+      <h1 class="title">Projects</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./Images/justin-attas-puzzle-piece-plotting-method.jpg"
+                alt="Project 1"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Sudoku Solver</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="window.open('https://github.com/CharlesOIpperciel/SudokuSolver')"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="window.open('./Projects/Project-SudokuSolver.html')"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./Images/1*jCn7s1U8Kui514py5E4ydw.jpg"
+                alt="Project 2"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Web Scraper</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick=""
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick=""
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./Images/Negative-Emotions.png"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Mood Meter</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick=""
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick=""
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#contact'"
+      />
+    </section>
+    <section id="contact">
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a href="mailto:ippc2001@usherbrooke.ca">ippc2001@usherbrooke.ca</a></p>
+        </div>
+        <div class="contact-info-container">
+        </div>
+      </div>
+    </section>
+    <footer>
+      <p>Copyright &#169; 2024 Charles-Olivier Ipperciel. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
