@@ -28,6 +28,11 @@ a,
 
 /* DESKTOP NAV */
 
+#desktop-nav {
+  background-color: lightgrey;
+  border: black 0.1rem solid;
+}
+
 nav,
 .nav-links {
   display: flex;
@@ -36,13 +41,21 @@ nav,
 nav {
   justify-content: space-around;
   align-items: center;
-  height: 17vh;
+  height: 10vh;
 }
 
 .nav-links {
   gap: 2rem;
   list-style: none;
   font-size: 1.5rem;
+}
+
+.nav-links li a {
+  transition: transform 0.3s ease;
+}
+
+.nav-links li a:hover {
+  transform: scale(1.1);
 }
 
 a {
@@ -54,7 +67,6 @@ a {
 
 a:hover {
   color: grey;
-  text-decoration: underline;
   text-underline-offset: 1rem;
   text-decoration-color: rgb(181, 181, 181);
   transform: scale(1.1);
@@ -80,6 +92,7 @@ li a:hover {
 
 #hamburger-nav {
   display: none;
+  background: lightgrey;
 }
 
 .hamburger-menu {
@@ -127,6 +140,7 @@ li a:hover {
 
 .menu-links.open {
   max-height: 300px;
+  border-radius: 5px;
 }
 
 .hamburger-icon.open span:first-child {
