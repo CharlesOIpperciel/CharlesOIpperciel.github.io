@@ -256,6 +256,10 @@ section {
   gap: 1rem;
 }
 
+.in-progress-btn {
+  color: dodgerblue;
+}
+
 .btn {
   font-weight: 600;
   transition: all 300ms ease;
