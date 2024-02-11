@@ -1,5 +1,5 @@
-/* GENERAL */
-
+/* GENERAL STYLES */
+/* This section contains basic styles that apply to the entire page. */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 * {
@@ -19,15 +19,15 @@ p {
   color: rgb(85, 85, 85);
 }
 
-/* TRANSITION */
-
+/* TRANSITION EFFECTS */
+/* This section defines transition effects for links and buttons. */
 a,
 .btn {
   transition: all 300ms ease;
 }
 
-/* DESKTOP NAV */
-
+/* DESKTOP NAVIGATION STYLES */
+/* Styles for the desktop navigation bar, including layout and hover effects. */
 #desktop-nav {
   background-color: lightgrey;
   border: black 0.1rem solid;
@@ -50,46 +50,28 @@ nav {
   font-size: 1.5rem;
 }
 
-.nav-links li a {
-  transition: transform 0.3s ease;
-}
-
-.nav-links li a:hover {
-  transform: scale(1.1);
-}
-
-a {
+.nav-links li a,
+a,
+li a {
   color: black;
   text-decoration: none;
   text-decoration-color: white;
   transition: transform 0.3s ease;
 }
 
-a:hover {
-  color: grey;
-  text-underline-offset: 1rem;
-  text-decoration-color: rgb(181, 181, 181);
-  transform: scale(1.1);
-}
-
-li a {
-  transition: transform 0.3s ease;
-}
-
+.nav-links li a:hover,
+a:hover,
 li a:hover {
   transform: scale(1.1);
 }
 
 .logo {
   font-size: 2rem;
-}
-
-.logo:hover {
   cursor: default;
 }
 
-/* HAMBURGER MENU */
-
+/* HAMBURGER MENU STYLES */
+/* Responsive design for mobile navigation menu. */
 #hamburger-nav {
   display: none;
   background: lightgrey;
@@ -123,6 +105,12 @@ li a:hover {
   width: fit-content;
   max-height: 0;
   overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.menu-links.open {
+  max-height: 300px;
+  border-radius: 5px;
 }
 
 .menu-links a {
@@ -138,12 +126,8 @@ li a:hover {
   list-style: none;
 }
 
-.menu-links.open {
-  max-height: 300px;
-  border-radius: 5px;
-}
-
-.hamburger-icon.open span:first-child {
+.hamburger-icon.open span:first-child,
+.hamburger-icon.open span:last-child {
   transform: rotate(45deg) translate(10px, 5px);
 }
 
@@ -151,24 +135,8 @@ li a:hover {
   opacity: 0;
 }
 
-.hamburger-icon.open span:last-child {
-  transform: rotate(-45deg) translate(10px, -5px);
-}
-
-.hamburger-icon span:first-child {
-  transform: none;
-}
-
-.hamburger-icon span:first-child {
-  opacity: 1;
-}
-
-.hamburger-icon span:first-child {
-  transform: none;
-}
-
-/* SECTIONS */
-
+/* SECTIONS STYLES */
+/* General styles for different sections of the website. */
 section {
   padding-top: 4vh;
   height: 96vh;
@@ -179,17 +147,18 @@ section {
 
 .section-container {
   display: flex;
+  gap: 4rem;
+  height: 80%;
 }
 
-/* PROFILE SECTION */
-
+/* PROFILE SECTION STYLES */
+/* Specific styles for the profile section, including images and text. */
 #profile {
   display: flex;
   justify-content: center;
   gap: 5rem;
   height: 80vh;
 }
-
 
 .section__pic-container {
   display: flex;
@@ -241,23 +210,19 @@ section {
   transform: scale(1.1);
 }
 
-/* ICONS */
-
+/* ICONS STYLES */
+/* General styles for icons used throughout the site. */
 .icon {
   cursor: pointer;
   height: 2rem;
 }
 
-/* BUTTONS */
-
+/* BUTTON STYLES */
+/* Styles for different buttons, including hover effects. */
 .btn-container {
   display: flex;
   justify-content: center;
   gap: 1rem;
-}
-
-.in-progress-btn {
-  color: dodgerblue;
 }
 
 .btn {
@@ -268,6 +233,10 @@ section {
   border-radius: 2rem;
 }
 
+.in-progress-btn {
+  color: dodgerblue;
+}
+
 .btn-color-1,
 .btn-color-2 {
   border: rgb(53, 53, 53) 0.1rem solid;
@@ -276,12 +245,12 @@ section {
 .btn-color-1:hover,
 .btn-color-2:hover {
   cursor: pointer;
-}
-
-.btn-color-1,
-.btn-color-2:hover {
   background: rgb(53, 53, 53);
   color: white;
+}
+
+.btn-color-1 {
+  background: none;
 }
 
 .btn-color-1:hover {
@@ -296,12 +265,8 @@ section {
   border: rgb(255, 255, 255) 0.1rem solid;
 }
 
-.btn-container {
-  gap: 1rem;
-}
-
-/* ABOUT SECTION */
-
+/* ABOUT SECTION STYLES */
+/* Styles for the about section, including text and layout. */
 #about {
   position: relative;
 }
@@ -311,6 +276,7 @@ section {
 }
 
 .about-containers {
+  display: flex;
   gap: 2rem;
   margin-bottom: 2rem;
   margin-top: 2rem;
@@ -319,11 +285,6 @@ section {
 .about-details-container {
   justify-content: center;
   flex-direction: column;
-}
-
-.about-containers,
-.about-details-container {
-  display: flex;
 }
 
 .about-pic {
@@ -351,19 +312,8 @@ section {
   transform: scale(1.05);
 }
 
-.section-container {
-  gap: 4rem;
-  height: 80%;
-}
-
-.section__pic-container {
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
-}
-
-/* EXPERIENCE SECTION */
-
+/* EXPERIENCE SECTION STYLES */
+/* Styles for the experience section, focusing on layout and details. */
 #experience {
   position: relative;
 }
@@ -401,8 +351,8 @@ article .icon {
   cursor: default;
 }
 
-/* PROJECTS SECTION */
-
+/* PROJECTS SECTION STYLES */
+/* Styles specific to the projects section, including images and titles. */
 #projects {
   position: relative;
 }
@@ -428,8 +378,8 @@ article .icon {
   border-color: rgb(163, 163, 163);
 }
 
-/* CONTACT */
-
+/* CONTACT SECTION STYLES */
+/* Styles for the contact section, including form and information layout. */
 #contact {
   display: flex;
   justify-content: center;
@@ -447,16 +397,16 @@ article .icon {
   transition: transform 0.3s ease;
 }
 
+.contact-info-upper-container:hover {
+  transform: scale(1.05);
+}
+
 .contact-info-container {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   margin: 1rem;
-}
-
-.contact-info-upper-container:hover {
-  transform: scale(1.05);
 }
 
 .contact-info-container p {
@@ -471,8 +421,8 @@ article .icon {
   height: 2.5rem;
 }
 
-/* FOOTER SECTION */
-
+/* FOOTER STYLES */
+/* Styles for the footer, including text alignment and margin. */
 footer {
   height: 10vh;
   margin: 0 1rem;
@@ -482,17 +432,16 @@ footer p {
   text-align: center;
 }
 
-/* PROJECTS */
-/* Project - Sudoku Solver Grid */
-
+/* PROJECTS - SUDOKU SOLVER GRID STYLES */
+/* Specific styles for the Sudoku Solver project, focusing on grid layout. */
 #grid {
   margin-top: 50px;
   margin-bottom: 50px;
-  justify-content: center;
   display: grid;
   grid-template-columns: repeat(9, 40px);
   grid-template-rows: repeat(9, 40px);
   gap: 1px;
+  justify-content: center;
 }
 
 input[type="text"] {
@@ -503,7 +452,7 @@ input[type="text"] {
 }
 
 .cell {
-  border: 1px solid black; /* Add black border around each cell */
+  border: 1px solid black;
 }
 
 #solveBtn, #clearBtn {
