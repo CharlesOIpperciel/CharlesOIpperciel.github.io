@@ -50,6 +50,14 @@ nav {
   font-size: 1.5rem;
 }
 
+.nav-links li {
+  transition: transform 0.3s ease;
+}
+
+.nav-links li:hover {
+  transform: scale(1.3);
+}
+
 .nav-links li a,
 a,
 li a {
