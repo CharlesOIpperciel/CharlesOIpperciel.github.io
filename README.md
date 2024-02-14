@@ -8,6 +8,8 @@ Explore my projects to see what I've been working on. From personal endeavors to
 
 ## Contact
 
+Want to collaborate on a project, discuss an opportunity, or simply say hello? Don't hesitate to reach out! You can contact me:
+
 - Email: ippc2001@usherbrooke.ca
 - LinkedIn: [Here](https://www.linkedin.com/in/coipp)
 
