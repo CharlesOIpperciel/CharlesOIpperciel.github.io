@@ -9,7 +9,7 @@ Explore my projects to see what I've been working on. From personal endeavors to
 ## Contact
 
 - Email: ippc2001@usherbrooke.ca
-- LinkedIn: [Charles-Olivier Ipperciel](https://www.linkedin.com/in/coipp)
+- LinkedIn: [Here](https://www.linkedin.com/in/coipp)
 
 ## Technologies Used
 
