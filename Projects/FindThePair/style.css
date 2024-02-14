@@ -1,0 +1,83 @@
+/*Grid CSS starts here*/
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+}
+
+.grid-item {
+    padding: 20px;
+    text-align: center;
+    border: black 1px solid;
+    margin: 10px;
+    background-color: lightgrey;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.animal {
+    display: none;
+}
+
+.revealed .animal {
+    display: inline-block;
+}
+
+.matched .animal {
+    display: inline-block;
+}
+
+/*Grid CSS ends here*/
+
+/*Select button CSS starts here*/
+.select-btn-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.select-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+/*Select button CSS ends here*/
+
+/*Generate button CSS starts here*/
+.generate-puzzle-btn-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.generate-puzzle-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+/*Generate button CSS ends here*/
+
+/*Temporary*/
+
+.text-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
