@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const grid = document.getElementById("grid");
     const solveBtn = document.getElementById("solveBtn");
     const clearBtn = document.getElementById("clearBtn");

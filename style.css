@@ -17,6 +17,7 @@ html {
 
 p {
   color: rgb(85, 85, 85);
+  line-height: 2.0em;
 }
 
 /* TRANSITION EFFECTS */
@@ -440,41 +441,3 @@ footer p {
   text-align: center;
 }
 
-/* PROJECTS - SUDOKU SOLVER GRID STYLES */
-/* Specific styles for the Sudoku Solver project, focusing on grid layout. */
-#grid {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  display: grid;
-  grid-template-columns: repeat(9, 40px);
-  grid-template-rows: repeat(9, 40px);
-  gap: 1px;
-  justify-content: center;
-}
-
-input[type="text"] {
-  width: 40px;
-  height: 40px;
-  font-size: 16px;
-  text-align: center;
-}
-
-.cell {
-  border: 1px solid black;
-}
-
-#solveBtn, #clearBtn {
-  padding: 10px 10px;
-  font-size: 1.0em;
-  font-family: 'Copperplate', sans-serif;
-  border-radius: 5px;
-  background-color: #F0F0F0;
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-
-#CenterSudokuButtons {
-  display: block;
-  width: 150px;
-  margin: 0 auto;
-}
