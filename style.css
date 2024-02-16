@@ -251,6 +251,10 @@ section {
   border: rgb(53, 53, 53) 0.1rem solid;
 }
 
+.btn-color-3 {
+  border: rgb(53, 53, 53) 0.1rem solid;
+}
+
 .btn-color-1:hover,
 .btn-color-2:hover {
   cursor: pointer;
@@ -386,6 +390,12 @@ article .icon {
   color: black;
   border-color: rgb(163, 163, 163);
 }
+
+.project-btn-no {
+  background: lightgrey;
+  color: black;
+}
+
 
 /* CONTACT SECTION STYLES */
 /* Styles for the contact section, including form and information layout. */
