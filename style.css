@@ -288,6 +288,13 @@ section {
   text-align: justify;
 }
 
+.text-container-2 p {
+  text-align: justify;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 1rem;
+}
+
 .about-containers {
   display: flex;
   gap: 2rem;
