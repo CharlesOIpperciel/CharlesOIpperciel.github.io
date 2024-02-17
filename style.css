@@ -295,6 +295,16 @@ section {
   font-size: 1rem;
 }
 
+.text-about-me-container {
+  padding: 0.5rem;
+  flex: 1;
+  background: white;
+  border-radius: 1rem;
+  border: lightgrey 0.5rem solid;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
 .about-containers {
   display: flex;
   gap: 2rem;
