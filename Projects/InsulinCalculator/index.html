@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insulin Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .logo {
+            max-width: 100px; /* Adjust this value as needed */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        #container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #summary, #rapid_table {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        input[type="button"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <img class="logo" alt="insulin-calculator-logo" src="./ProjectImages/output.png">
+    <div id="summary"></div>
+    <div id="rapid_table"></div>
+</div>
+
+<script>
+    function get_DTQ(regime, poids) {
+        return Math.round(regime * poids);
+    }
+
+    function get_standard_doses_per_meal(DTQ) {
+        return Math.round((0.6 * DTQ) / 3)
+    }
+
+    function get_standard_doses_per_meal_Dejeuner(DTQ) {
+        return Math.round((DTQ * (2 / 3)) * (1 / 3));
+    }
+
+    function get_standard_doses_per_meal_Souper(DTQ) {
+        return Math.round((DTQ * (1 / 3)) * (1 / 2));
+    }
+
+    function get_sensibility(DTQ) {
+        return Math.round(100 / DTQ);
+    }
+
+    function get_correction(interval, se, ng) {
+        return Math.round((interval - ng) / se);
+    }
+
+    function hs_correction(interval, se, sd) {
+        if (Math.round((interval - sd) / se) < 0) {
+            return 0
+        } else {
+            return Math.round((interval - sd) / se)
+        }
+    }
+
+    function print_rapid_table(DTQ, injectionType) {
+        const sensibility = get_sensibility(DTQ);
+        const glycemie_normale = 5;
+        const glycemie_normale2 = 7;
+        const interval1 = 8;
+        const interval2 = 12;
+        const interval3 = 17;
+
+        let sd, thirdRow, fourthRow, fifthRow, fourthRowHS, fifthRowHS, belowSd, sd_dej, sd_souper, thirdRow_dej, fourthRow_dej, fifthRow_dej, thirdRow_souper, fourthRow_souper,
+            fifthRow_souper, belowSd_dej, belowSd_souper;
+        let rapidTable = '<h3>Table Rapide (UR)  -- Sensibilité: ' + sensibility + '</h3>';
+
+        if (injectionType === 4) {
+            rapidTable += '<table><tr><th>Intervalle</th><th>Déjeuner (u)</th><th>Diner (u)</th><th>Souper (u)</th><th>HS (u)</th></tr>';
+            sd = get_standard_doses_per_meal(DTQ, injectionType);
+            thirdRow = sd + get_correction(interval1, sensibility, glycemie_normale);
+            fourthRow = sd + get_correction(interval2, sensibility, glycemie_normale);
+            fifthRow = sd + get_correction(interval3, sensibility, glycemie_normale);
+            fourthRowHS = hs_correction(interval2, sensibility, glycemie_normale2);
+            fifthRowHS = hs_correction(interval3, sensibility, glycemie_normale2);
+            belowSd = sd - get_correction(interval1, sensibility, glycemie_normale);
+
+            rapidTable += '<tr><td>[< 4]</td><td>' + belowSd + '</td><td>' + belowSd + '</td><td>' + belowSd + '</td><td>0</td></tr>';
+            rapidTable += '<tr><td>[4,1 &lt; ' + interval1 + ']</td><td>' + sd + '</td><td>' + sd + '</td><td>' + sd + '</td><td>0</td></tr>';
+            rapidTable += '<tr><td>[8,1 &lt; ' + interval2 + ']</td><td>' + thirdRow + '</td><td>' + thirdRow + '</td><td>' + thirdRow + '</td><td>0</td></tr>';
+            rapidTable += '<tr><td>[12,1 &lt; ' + interval3 + ']</td><td>' + fourthRow + '</td><td>' + fourthRow + '</td><td>' + fourthRow + '</td><td>' + fourthRowHS + '</td></tr>';
+            rapidTable += '<tr><td>[> 17]</td><td>' + fifthRow + '</td><td>' + fifthRow + '</td><td>' + fifthRow + '</td><td>' + fifthRowHS + '</td></tr>';
+
+        } else if (injectionType === 3) {
+            rapidTable += '<table><tr><th>Intervalle</th><th>Déjeuner (u)</th><th>Souper (u)</th><th>HS (u)</th></tr>';
+            sd_souper = get_standard_doses_per_meal_Souper(DTQ);
+            sd_dej = get_standard_doses_per_meal_Dejeuner(DTQ);
+            thirdRow_dej = sd_dej + get_correction(interval1, sensibility, glycemie_normale);
+            fourthRow_dej = sd_dej + get_correction(interval2, sensibility, glycemie_normale);
+            fifthRow_dej = sd_dej + get_correction(interval3, sensibility, glycemie_normale);
+            thirdRow_souper = sd_souper + get_correction(interval1, sensibility, glycemie_normale);
+            fourthRow_souper = sd_souper + get_correction(interval2, sensibility, glycemie_normale);
+            fifthRow_souper = sd_souper + get_correction(interval3, sensibility, glycemie_normale);
+            fourthRowHS = hs_correction(interval2, sensibility, glycemie_normale2);
+            fifthRowHS = hs_correction(interval3, sensibility, glycemie_normale2);
+
+            belowSd_dej = sd_dej - get_correction(interval1, sensibility, glycemie_normale);
+            belowSd_souper = sd_souper - get_correction(interval1, sensibility, glycemie_normale);
+
+            rapidTable += '<tr><td>[< 4]</td><td>' + belowSd_dej + '</td><td>' + belowSd_souper + '</td><td>0</td></tr>';
+            rapidTable += '<tr><td>[4,1 &lt; ' + interval1 + ']</td><td>' + sd_dej + '</td><td>' + sd_souper + '</td><td>0</td></tr>';
+            rapidTable += '<tr><td>[8,1 &lt; ' + interval2 + ']</td><td>' + thirdRow_dej + '</td><td>' + thirdRow_souper + '</td><td>0</td></tr>';
+            rapidTable += '<tr><td>[12,1 &lt; ' + interval3 + ']</td><td>' + fourthRow_dej + '</td><td>' + fourthRow_souper + '</td><td>' + fourthRowHS + '</td></tr>';
+            rapidTable += '<tr><td>[> 17]</td><td>' + fifthRow_dej + '</td><td>' + fifthRow_souper + '</td><td>' + fifthRowHS + '</td></tr>';
+        }
+
+        rapidTable += '</table>';
+        document.getElementById('rapid_table').innerHTML += rapidTable;
+    }
+
+    function print_basal_value(DTQ, injectionType) {
+        let basalOutput = '';
+        if (injectionType === 3) {
+            const NPH_dej = Math.round((DTQ * (2 / 3)) * (2 / 3));
+            const NPH_souper = Math.round((DTQ * (1 / 3)) * (1 / 2));
+            basalOutput += `<p>NPH Déjeuner: ${NPH_dej} u</p>`;
+            basalOutput += `<p>NPH Souper: ${NPH_souper} u</p>`;
+        } else if (injectionType === 4) {
+            const basal = Math.round(0.4 * DTQ);
+            basalOutput += `<p>Basale (HS): ${basal} u</p>`;
+        }
+        return basalOutput;
+    }
+
+
+    function generate_rapid_table(DTQ, injectionType) {
+        print_rapid_table(DTQ, injectionType);
+    }
+
+    function main() {
+        const regimes = {
+            '1': 1,
+            '2': 0.8,
+            '3': 0.6
+        };
+
+        let regimeKey;
+        while (true) {
+            regimeKey = prompt('Choisir une des trois situations suivantes (1, 2 ou 3):\n1. Acidose (1 U / kg / jour)\n2. Hyperglycémie + cétone (0,8 U / kg / jr)\n3. Hyperglycémie sans cétone (0,6 U / kg / jr)');
+            if (regimes.hasOwnProperty(regimeKey)) {
+                break;
+            }
+        }
+
+        const regime = regimes[regimeKey];
+
+        let poids;
+        while (true) {
+            poids = parseFloat(prompt('Veuillez entrer le poids du patient en kg avec un point si il y a décimales (exemple: xx.xx):'));
+            if (!isNaN(poids) && poids > 0) {
+                break;
+            }
+        }
+
+        let injections;
+        while (true) {
+            injections = parseInt(prompt('Choisir le type de régime (3 ou 4):\n- 3 injections\n- 4 injections'));
+            if (injections === 3 || injections === 4) {
+                break;
+            }
+        }
+
+        const DTQ = get_DTQ(regime, poids);
+        const summaryDiv = document.getElementById('summary');
+        summaryDiv.innerHTML = '<h3>Résumé</h3>' +
+            '<p>Situation au diagnostic: ' + regime + ' u / kg /  jr</p>' +
+            '<p>Poids du patient: ' + poids + ' kg</p>' +
+            '<p>Type de régime: ' + injections + ' injections</p>' +
+            '<p>DTQ: ' + DTQ + ' u / jr </p>';
+
+        let basalOutput = print_basal_value(get_DTQ(regime, poids), injections);
+        let table = '';
+        table += basalOutput;
+        document.getElementById('rapid_table').innerHTML = table;
+
+        generate_rapid_table(DTQ, injections);
+    }
+
+    main();
+</script>
+
+</body>
+</html>
