@@ -211,6 +211,12 @@
             '3': 0.6
         };
 
+        const situations = {
+            '1': 'Acidose',
+            '2': 'Hyperglycémie + cétone',
+            '3': 'Hyperglycémie sans cétone'
+        };
+
         let regimeKey;
         while (true) {
             regimeKey = prompt('Choisir une des trois situations suivantes (1, 2 ou 3):\n1. Acidose (1 U / kg / jour)\n2. Hyperglycémie + cétone (0,8 U / kg / jr)\n3. Hyperglycémie sans cétone (0,6 U / kg / jr)');
@@ -220,6 +226,7 @@
         }
 
         const regime = regimes[regimeKey];
+        const situation = situations[regimeKey];
 
         let poids;
         while (true) {
@@ -240,7 +247,7 @@
         const DTQ = get_DTQ(regime, poids);
         const summaryDiv = document.getElementById('summary');
         summaryDiv.innerHTML = '<h3>Résumé</h3>' +
-            '<p>Situation au diagnostic: ' + regime + ' u / kg /  jr</p>' +
+            '<p>Situation au diagnostic: ' + situation + ' ' + regime + ' u / kg /  jr</p>' +
             '<p>Poids du patient: ' + poids + ' kg</p>' +
             '<p>Type de régime: ' + injections + ' injections</p>' +
             '<p>DTQ: ' + DTQ + ' u / jr </p>';
@@ -252,6 +259,7 @@
 
         generate_rapid_table(DTQ, injections);
     }
+
 
     main();
 </script>
