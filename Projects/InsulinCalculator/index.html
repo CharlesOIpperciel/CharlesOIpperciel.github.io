@@ -224,7 +224,7 @@
         let poids;
         while (true) {
             poids = parseFloat(prompt('Veuillez entrer le poids du patient en kg avec un point si il y a décimales (exemple: xx.xx):'));
-            if (!isNaN(poids) && poids > 0) {
+            if (!isNaN(poids) && poids > 0 && poids <= 200) {
                 break;
             }
         }
