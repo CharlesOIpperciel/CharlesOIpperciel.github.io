@@ -320,3 +320,19 @@ h3 {
 
 }
 
+@media (max-width: 400px) {
+    .container {
+        max-width: 300px;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 170vh;
+    }
+
+    .project {
+        width: 200px;
+        height: 100px;
+        margin: 20px 0 20px 45px;
+    }
+
+}
+
