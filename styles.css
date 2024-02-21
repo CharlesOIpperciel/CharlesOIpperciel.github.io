@@ -1,0 +1,322 @@
+/*the grey background */
+.white-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('Images/GreyBackground.png');
+}
+
+/*White container*/
+.container {
+    border-radius: 5px;
+    max-width: 800px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: white;
+    height: 100vh;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 1.5);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    color: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border: 2px black solid;
+    text-align: center;
+    background-color: #dddddd;
+}
+
+
+h1 {
+    font-family: 'Copperplate', sans-serif;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Copperplate', sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+h3 {
+    font-family: 'Copperplate', sans-serif;
+    text-align: center;
+    color: white;
+    margin-top: 70px;
+}
+
+
+.photo-icons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.about-section img {
+    width: 200px; /* Reduce image width */
+    height: 200px; /* Reduce image height */
+    border-radius: 50%; /* Make the image round */
+    margin-top: 30px;
+    margin-right: 20px;
+    transition: transform 1s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.about-section img:hover {
+    transform: scale(1.05);
+}
+
+.about-section .icons {
+    margin-left: 10px;
+}
+
+.about-section .icons a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px; /* Reduce icon size */
+    margin-right: 5px; /* Adjust spacing between icons */
+    transition: transform 0.3s;
+}
+
+.about-section .icons a:hover {
+    transform: scale(1.1);
+}
+
+.icons-section img {
+    width: 50px; /* Reduce image width */
+    height: 50px; /* Reduce image height */
+    margin: 0 10px; /* Adjust margin */
+    transition: transform 0.3s;
+
+}
+
+/*Project rectangles*/
+.project {
+    width: 150px;
+    height: 100px;
+    margin: 20px;
+    float: left;
+    border: 2px solid black;
+    transition: transform 0.3s;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.projects-section {
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.project-find-the-pair {
+    background-image: url('./Projects/FindThePair/ProjectImages/Picture.png');
+    background-size: 110%;
+    background-clip: content-box;
+    background-position: center;
+}
+
+.project-mood-meter {
+    background-image: url('./Images/MoodMeter.png');
+    background-size: 100%;
+    background-clip: content-box;
+    background-position: center;
+}
+
+.project-insulin-calculator {
+    background-image: url('./Projects/InsulinCalculator/ProjectImages/output.png');
+    background-size: 140%;
+    background-clip: content-box;
+    background-position: center;
+}
+
+.project-leetcode {
+    background-image: url('./Projects/LeetCode/ProjectImages/CompressJPEG.online_500x500-image.png');
+    background-size: 140%;
+    background-clip: content-box;
+    background-position: center;
+
+}
+
+.project-sudoku-solver {
+    background-image: url('./Images/SudokuSolver.jpg');
+    background-size: 100%;
+    background-clip: content-box;
+    background-position: center;
+}
+
+.project-pythoncasino {
+    background-image: url('./Projects/PythonCasino/ProjectImages/CompressJPEG.online_500x500-image.jpeg');
+    background-size: 100%;
+    background-clip: content-box;
+    background-position: center;
+}
+
+.project-pythonscripts {
+    background-image: url('./Projects/PythonScripts/ProjectImages/CompressJPEG.online_500x500-image.png');
+    background-size: 100%;
+    background-clip: content-box;
+    background-position: center;
+}
+
+/*Black rectangle on projects hover animation*/
+.project::before {
+    content: "";
+    position: absolute;
+    bottom: 0; /* Initial position, at the bottom */
+    left: 0;
+    width: 100%;
+    height: 0; /* Initially set height to 0 */
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: height 0.5s ease, bottom 0.5s ease;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.project:hover::before {
+    bottom: 0; /* Move the rectangle to the top */
+    height: 50%; /* Expand the height of the rectangle */
+}
+
+.project:hover .h3-container {
+    position: relative;
+    z-index: 2; /* Make h3 appear above the black rectangle */
+}
+
+.h3-container {
+    position: relative;
+    transition: transform 0.45s ease-in-out;
+    opacity: 0; /* Initially hide h3 */
+}
+
+.project:hover .h3-container {
+    opacity: 1; /* Show h3 on hover */
+    transform: translateY(-35px);
+}
+
+.resume-btn {
+    background-color: lightgrey;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 20px;
+    transition: transform 0.3s;
+    text-align: center;
+    border: 2px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-family: 'Copperplate', sans-serif;
+}
+
+.resume-btn:hover {
+    transform: scale(1.05);
+    background-color: dimgrey;
+    color: white;
+}
+
+.project-button {
+    margin-top: 10px;
+    background-color: lightgrey;
+    font-family: 'Copperplate', sans-serif;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 2px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.live-demo {
+    margin-top: 10px;
+    background-color: lightgrey;
+    font-family: 'Copperplate', sans-serif;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 2px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.live-demo:hover {
+    transform: scale(1.05);
+    background-color: lightgreen;
+    color: black;
+}
+
+.project-button:hover {
+    transform: scale(1.05);
+    background-color: dimgrey;
+    color: white;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+
+/*Different media queries*/
+@media (max-width: 1200px) {
+    .container {
+        max-width: 800px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .container {
+        max-width: 800px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 800px) {
+    .container {
+        max-width: 600px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .project {
+        width: 150px;
+        height: 100px;
+        margin: 20px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .container {
+        max-width: 500px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .project {
+        width: 200px;
+        height: 100px;
+        margin: 20px;
+    }
+
+}
+
