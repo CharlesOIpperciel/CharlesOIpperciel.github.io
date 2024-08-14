@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('Images/GeometricBackgroundf.png');
+    background-image: url('Images/GeometricBackgroundF2.png');
     animation: translateYBackground 50s linear infinite;
 }
 
