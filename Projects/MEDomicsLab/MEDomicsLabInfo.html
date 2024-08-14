@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" type="text/css" href="../../styles.css">
+</head>
+<body>
+<!-- Navigation Section -->
+<nav>
+    <h1>My Portfolio</h1>
+    <ul>
+        <li><a href="../../index.html">Projects</a></li>
+        <li><a href="#">About me</a></li>
+    </ul>
+</nav>
+
+<!-- Main Content Section -->
+<div class="geometric-background">
+    <div class="container">
+        <!-- About Section -->
+        <div class="photo-icons-container">
+            <div class="about-section">
+                <!-- Image Section -->
+                <div class="image-section">
+                    <img src="../../Projects/MEDomicsLab/ProjectImages/medomicslab.png" alt="Your Picture"
+                         onclick="window.open('https://www.medomics-udes.org/fr/', '_blank')">
+                </div>
+                <!-- Icons Section -->
+                <div class="icons-section-MEDomicsLab">
+                    <div class="icons-MEDomicsLab">
+                        <!-- Github Icon -->
+                        <a href="https://github.com/MEDomics-UdeS/MEDomicsLab" target="_blank">
+                            <img src="../../Images/assets/github.png" alt="My Github profile" class="icon"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About Section -->
+        <h2 class="my-projects-text">My contributions</h2>
+        <div class="text-aboutme-container">
+            <ul class="about-me-list-MEDomicsLab">
+                <li><img src="../../Images/assets/database.png" alt="Icon 1">MongoDB implementation</li>
+                <li><img src="../../Images/assets/scalability.png" alt="Icon 2">Scalability of MEDomicsLab</li>
+                <li><img src="../../Images/assets/ReactJS.png" alt="Icon 3"><u>Frontend</u>  ReactJS</li>
+                <li><img src="../../Images/assets/python.png" alt="Icon 4"><u>Backend</u>  Python</li>
+            </ul>
+            <p class="about-me-text">
+                During my time at MEDomicsLab, I played a key role in enhancing the platform's scalability to
+                accommodate the increasing volume of healthcare data. My work involved implementing MongoDB as the
+                database solution, which required reworking and optimizing various tools within the application to
+                ensure seamless integration with the new database system.
+                <br>
+                <br>
+                I worked on both frontend and backend development. On the backend, I primarily worked with
+                Python to refactor and optimize the existing codebase, ensuring that the platform could efficiently
+                manage and process larger datasets with the newly implemented database. On the frontend, I used React
+                to modify and improve the user interface, making it more responsive and capable of handling the data
+                directly through the MongoDB database.
+                <br>
+                <br>
+                I essentially prepared MEDomicsLab for future growth, ensuring that the application remains robust and
+                scalable as it continues to handle increasingly complex healthcare datasets for it's AI tools.
+            </p>
+        </div>
+
+    </div>
+</div>
+<div class="footer-container">
+    <footer class="footer">
+        <p>© 2024 Charles-Olivier Ipperciel</p>
+    </footer>
+</div>
+</body>
+</html>

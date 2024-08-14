@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     background-image: url('Images/GeometricBackgroundf.png');
-    animation: translateYBackground 20s linear infinite; /* Adjust timing and animation function as needed */
+    animation: translateYBackground 50s linear infinite;
 }
 
 @keyframes translateYBackground {
@@ -23,7 +23,7 @@
     padding-left: 20px;
     padding-right: 20px;
     background-color: white;
-    height: 120vh;
+    height: 130vh;
     box-shadow: 0 0 10px rgba(0, 0, 0, 1.5);
 }
 
@@ -147,9 +147,60 @@ h3 {
     transform: scale(1.1);
 }
 
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.about-section img {
+    width: 200px; /* Reduce image width */
+    height: 200px; /* Reduce image height */
+    border-radius: 50%; /* Make the image round */
+    margin-top: 30px;
+    margin-right: 20px;
+    transition: transform 1s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.about-section img:hover {
+    transform: scale(1.05);
+}
+
+.about-section .icons {
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.about-section .icons-MEDomicsLab {
+    margin-left: 10px;
+    margin-bottom: -20px;
+}
+
+.about-section .icons a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px; /* Reduce icon size */
+    margin-right: 5px; /* Adjust spacing between icons */
+    transition: transform 0.3s;
+}
+
+.about-section .icons a:hover {
+    transform: scale(1.1);
+}
+
 .icons-section img {
     width: 50px; /* Reduce image width */
     height: 50px; /* Reduce image height */
+    margin: 0 10px; /* Adjust margin */
+    transition: transform 0.3s;
+
+}
+
+.icons-section-MEDomicsLab img {
+    width: 70px; /* Reduce image width */
+    height: 70px; /* Reduce image height */
     margin: 0 10px; /* Adjust margin */
     transition: transform 0.3s;
 
@@ -392,6 +443,18 @@ h3 {
     transition: transform 0.3s;
 }
 
+.project-button-info {
+    margin-top: 10px;
+    background-color: lightgrey;
+    font-family: 'Copperplate', sans-serif;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 2px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
 .live-demo {
     margin-top: 10px;
     background-color: lightgrey;
@@ -414,6 +477,12 @@ h3 {
     transform: scale(1.05);
     background-color: dimgrey;
     color: white;
+}
+
+.project-button-info:hover {
+    transform: scale(1.05);
+    background-color: lightyellow;
+    color: black;
 }
 
 .centered-text {
@@ -508,6 +577,42 @@ h3 {
     color: #333;
 }
 
+.about-me-list-MEDomicsLab {
+    list-style-type: none;
+    padding: 0;
+    display: flex; /* Use flexbox for easier alignment */
+    justify-content: center; /* Center the list horizontally */
+    gap: 20px; /* Add space between list items */
+}
+
+.about-me-list-MEDomicsLab li {
+    margin-bottom: 20px; /* Increase margin for better spacing */
+    font-family: 'Copperplate', sans-serif;
+    text-align: center; /* Center text */
+    display: flex; /* Use flexbox for easier alignment */
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center items horizontally */
+    border: black 2px solid;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.5s;
+    background-color: lightyellow;
+}
+
+.about-me-list-MEDomicsLab li:hover {
+    transform: scale(1.05);
+}
+
+.about-me-list-MEDomicsLab li img {
+    width: 40px; /* Adjust the width of the icon */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space between icon and text */
+}
+
+.about-me-list-MEDomicsLab li span {
+    font-size: 16px; /* Adjust font size */
+    color: #333;
+}
 
 /*Different media queries*/
 @media (max-width: 1200px) {
