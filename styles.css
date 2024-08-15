@@ -282,6 +282,13 @@ h3 {
     background-position: center;
 }
 
+.project-StudyHive {
+    background-image: url('./Projects/StudyHive/ProjectImages/StudyHiveLogo2.png');
+    background-size: 100%;
+    background-clip: content-box;
+    background-position: center;
+}
+
 .project {
     position: relative;
 }
