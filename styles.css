@@ -45,7 +45,7 @@ nav {
 
 nav h1 {
     margin: 15px;
-    font-size: 24px; /* Larger font size */
+    font-size: 24px;
 }
 
 nav ul {
@@ -55,7 +55,7 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin: 0 10px; /* Spacing between navigation items */
+    margin: 0 10px;
     border: black 1px solid;
     border-radius: 5px;
     padding: 1px;
@@ -72,8 +72,8 @@ nav ul li:hover {
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 18px; /* Font size for navigation links */
-    transition: color 0.3s ease; /* Smooth color transition */
+    font-size: 18px;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -116,9 +116,9 @@ h3 {
 }
 
 .about-section img {
-    width: 200px; /* Reduce image width */
-    height: 200px; /* Reduce image height */
-    border-radius: 50%; /* Make the image round */
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
     margin-top: 30px;
     margin-right: 20px;
     transition: transform 1s;
@@ -137,8 +137,8 @@ h3 {
 .about-section .icons a {
     color: #333;
     text-decoration: none;
-    font-size: 16px; /* Reduce icon size */
-    margin-right: 5px; /* Adjust spacing between icons */
+    font-size: 16px;
+    margin-right: 5px;
     transition: transform 0.3s;
 }
 
@@ -154,9 +154,9 @@ h3 {
 }
 
 .about-section img {
-    width: 200px; /* Reduce image width */
-    height: 200px; /* Reduce image height */
-    border-radius: 50%; /* Make the image round */
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
     margin-top: 30px;
     margin-right: 20px;
     transition: transform 1s;
@@ -180,8 +180,8 @@ h3 {
 .about-section .icons a {
     color: #333;
     text-decoration: none;
-    font-size: 16px; /* Reduce icon size */
-    margin-right: 5px; /* Adjust spacing between icons */
+    font-size: 16px;
+    margin-right: 5px;
     transition: transform 0.3s;
 }
 
@@ -190,17 +190,17 @@ h3 {
 }
 
 .icons-section img {
-    width: 50px; /* Reduce image width */
-    height: 50px; /* Reduce image height */
-    margin: 0 10px; /* Adjust margin */
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
     transition: transform 0.3s;
 
 }
 
 .icons-section-MEDomicsLab img {
-    width: 70px; /* Reduce image width */
-    height: 70px; /* Reduce image height */
-    margin: 0 10px; /* Adjust margin */
+    width: 70px;
+    height: 70px;
+    margin: 0 10px;
     transition: transform 0.3s;
 
 }
@@ -309,7 +309,7 @@ h3 {
     padding: 5px;
     position: absolute;
     z-index: 1;
-    bottom: 110%; /* Position the tooltip above the project */
+    bottom: 110%;
     left: 50%;
     margin-left: -100px;
     opacity: 0;
@@ -320,12 +320,12 @@ h3 {
 .tooltip::after {
     content: "";
     position: absolute;
-    top: 100%; /* Position the pointer at the bottom of the tooltip */
+    top: 100%;
     left: 50%;
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: rgba(0, 0, 0, 0.7) transparent transparent transparent; /* Create a triangle pointing down */
+    border-color: rgba(0, 0, 0, 0.7) transparent transparent transparent;
 }
 
 .project:hover .tooltip {
@@ -342,10 +342,10 @@ h3 {
 .project::before {
     content: "";
     position: absolute;
-    bottom: 0; /* Initial position, at the bottom */
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 0; /* Initially set height to 0 */
+    height: 0;
     background-color: rgba(0, 0, 0, 0.7);
     transition: height 0.5s ease, bottom 0.5s ease;
     z-index: 1;
@@ -353,28 +353,27 @@ h3 {
 }
 
 .project:hover::before {
-    bottom: 0; /* Move the rectangle to the top */
-    height: 50%; /* Expand the height of the rectangle */
+    bottom: 0;
+    height: 50%;
 }
 
 .project:hover .h3-container {
     position: relative;
-    z-index: 2; /* Make h3 appear above the black rectangle */
+    z-index: 2;
 }
 
 .h3-container {
     position: relative;
     transition: transform 0.45s ease-in-out;
-    opacity: 0; /* Initially hide h3 */
+    opacity: 0;
 }
 
 .project:hover .h3-container {
-    opacity: 1; /* Show h3 on hover */
+    opacity: 1;
     transform: translateY(-35px);
 }
 
 /*Resume Button */
-
 .resume-btn {
     padding: 0.6em 2em;
     border: none;
@@ -548,7 +547,7 @@ h3 {
     line-height: 1.6;
     color: #333;
     font-family: 'Copperplate', sans-serif;
-    text-align: justify; /* Justify the text */
+    text-align: justify;
     margin-top: 20px;
 }
 
@@ -556,18 +555,18 @@ h3 {
 .about-me-list {
     list-style-type: none;
     padding: 0;
-    display: flex; /* Use flexbox for easier alignment */
-    justify-content: center; /* Center the list horizontally */
-    gap: 20px; /* Add space between list items */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .about-me-list li {
-    margin-bottom: 20px; /* Increase margin for better spacing */
+    margin-bottom: 20px;
     font-family: 'Copperplate', sans-serif;
-    text-align: center; /* Center text */
-    display: flex; /* Use flexbox for easier alignment */
-    flex-direction: column; /* Arrange items vertically */
-    align-items: center; /* Center items horizontally */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border: black 2px solid;
     padding: 10px;
     border-radius: 5px;
@@ -580,31 +579,31 @@ h3 {
 }
 
 .about-me-list li img {
-    width: 40px; /* Adjust the width of the icon */
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 10px; /* Space between icon and text */
+    width: 40px;
+    height: auto;
+    margin-bottom: 10px;
 }
 
 .about-me-list li span {
-    font-size: 16px; /* Adjust font size */
+    font-size: 16px;
     color: #333;
 }
 
 .about-me-list-MEDomicsLab {
     list-style-type: none;
     padding: 0;
-    display: flex; /* Use flexbox for easier alignment */
-    justify-content: center; /* Center the list horizontally */
-    gap: 20px; /* Add space between list items */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .about-me-list-MEDomicsLab li {
-    margin-bottom: 20px; /* Increase margin for better spacing */
+    margin-bottom: 20px;
     font-family: 'Copperplate', sans-serif;
-    text-align: center; /* Center text */
-    display: flex; /* Use flexbox for easier alignment */
-    flex-direction: column; /* Arrange items vertically */
-    align-items: center; /* Center items horizontally */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border: black 2px solid;
     padding: 10px;
     border-radius: 5px;
@@ -617,13 +616,13 @@ h3 {
 }
 
 .about-me-list-MEDomicsLab li img {
-    width: 40px; /* Adjust the width of the icon */
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 10px; /* Space between icon and text */
+    width: 40px;
+    height: auto;
+    margin-bottom: 10px;
 }
 
 .about-me-list-MEDomicsLab li span {
-    font-size: 16px; /* Adjust font size */
+    font-size: 16px;
     color: #333;
 }
 
@@ -702,7 +701,7 @@ h3 {
         width: 200px;
         height: 100px;
         margin: 20px 0 20px 45px;
-        position: relative; /* Add this line to make the positioning of .h3-container relative to .project */
+        position: relative;
     }
 
     .resume-btn {
